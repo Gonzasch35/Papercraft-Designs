@@ -1,0 +1,217 @@
+:root {
+    --primero: #dcc7aa;
+    --segundo: #373737;
+    --tercero: #f7c331;
+    --cuarto: #f7882f;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+} 
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-size: 2rem;
+    font-family: 'Jost', sans-serif;
+    background-image: url(../multimedia/fondo2.jfif);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.contenedor {
+    width: 100%;
+    min-height: 10rem;
+    background-color: var(--segundo);
+    display: inline-block;
+/*     display: flex;
+    justify-content: space-between;
+    align-items: center; */
+    box-shadow: 5px 0 10px rgba(0, 0, 0, .8);
+}
+
+.contenedor__logo {
+/*     display: flex; */
+display: inline;
+    margin-left: 1rem;   
+}
+
+.contenedor__logo img {
+    margin: 0;
+    height: 10rem;
+}
+
+.navegacion {
+    margin-right: 2rem;
+    display: inline;
+}
+
+.listas{
+    list-style-type: none;
+/*     display: flex;
+    justify-content: center;
+    align-items: center; */ 
+    margin: 0;
+    text-transform: uppercase;
+}
+ul {
+    text-align: right;
+}
+li {
+    display: inline;
+}
+
+.listas a{
+    color: var(--primero);
+    text-decoration: none;
+    margin: 2rem;
+    font-size: 1.5rem;
+}
+.listas a:hover, a.active {
+    padding: 1rem;
+    color: white;
+    background: rgba(0, 0, 0, .2);
+    border-radius: .5rem;
+}
+
+/* @media (max-width: 1150px){
+    body {
+        font-size: 1.5rem;
+    }
+    .contenedor {
+        display: block;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    .imagen img {
+        margin: auto;
+        height: 8rem;
+        border-bottom: .3rem solid var(--primero);
+    }
+    .listas {
+        flex-direction: column;
+    }
+    .listas li {
+        margin-bottom: 1rem;
+    }
+} */
+
+
+/* SECTION */
+.contenido {
+    display: inline-block;
+    width: 100%;
+    height: 100rem;
+    background-image: url(../multimedia/tucan.jpg);
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 70% 100%;
+}
+.titulo {
+    width: 100%;
+    padding: 5rem auto;
+    text-align: center;
+    margin: 0;
+}
+.titulo__parrafo {
+    width: 50%;
+    margin-left: 20rem;
+}
+
+/* DISEÑOS */
+.galeria {
+    text-transform: uppercase;
+    color: var(--primero);
+}
+
+.categorias {
+    margin-left: 30rem;
+}
+
+.galeria__animales,
+.galeria__estatuas {
+    display: inline-block;
+}
+
+.galeria__animales img,
+.galeria__estatuas img {
+    width: 20rem;
+    margin-left: 5rem;
+    border-radius: 2rem;
+}
+
+/* Contacto */
+
+h2, label {
+    text-align: center;
+    color: var(--primero);
+    text-transform: uppercase;
+}
+
+.formulario {
+    background-color: var(--primero);
+    margin: 0 auto;
+    width: 50%;
+    padding: 2rem;
+    border-radius: 2rem;
+}
+.formulario fieldset {
+    border: none;
+}
+.formulario legend {
+    color: var(--segundo);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+.campos {
+
+}
+
+.relleno {
+    margin-bottom: 1rem;
+}
+.relleno label {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: #6b7a87;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+.input-text {
+    width: 100%;
+    border: none;
+    padding: 1rem;
+    border-radius: .5rem;
+}
+/* footer */
+
+footer {
+    height: 6rem;
+    font-size: 1rem;
+    margin-bottom: 0;
+    background-color: var(--segundo);
+    color: var(--primero);
+    text-align: center;
+    text-transform: uppercase;
+}
+footer p {
+    margin: auto;
+    padding-top: 2rem;
+}
+
+footer i {
+    margin-left: 1rem;
+    font-size: 2rem;
+    color: var(--primero)
+    
+}
+
+
+
