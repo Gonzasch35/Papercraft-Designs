@@ -1,8 +1,11 @@
 :root {
     --primero: #dcc7aa;
     --segundo: #373737;
-    --tercero: #f7c331;
-    --cuarto: #f7882f;
+    --segundoClaro: #d8d8d8;
+    --tercero: #f7c94d;
+    --cuarto: #fa9a4b;
+    --blanco: #ffffff;
+    --gris: #3b434b;
 }
 
 html {
@@ -11,20 +14,24 @@ html {
 } 
 
 *, *::before, *::after {
-    box-sizing: inherit;
+    box-sizing: border-box;
 }
 
 body {
     margin: 0;
     font-size: 2rem;
     font-family: 'PT Sans', sans-serif;
-    background-color: var(--primero);
+    background-color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 h1 {
-    font-size: 5.8rem;
+    font-size: 5.2rem;
     text-transform: uppercase;
-    font-family: 'Rubik Mono one', sans-serif;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    font-weight: bold;
 }
 
 h2 {
@@ -45,6 +52,15 @@ h1, h2, h3, h4 {
 }
 main {
     min-height: 120rem;
+    background-color: var(--gris);
+}
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: var(--segundo);
 }
 
 @media screen and (max-width: 768px) {
@@ -53,6 +69,26 @@ main {
     }
 }
 
+@media screen and (max-width: 500px) {
+    
+    body {
+        margin: 0;
+        padding: 0;
+        font-size: 1.6rem;
+    }
+    
+    h1 {
+        font-size: 2.6rem;
+        width: 100%;
+        display: block;
+    }
+    h2 {
+        font-size: 2.2rem;
+    }
+}
+
+/* Header */
+
 .contenedor {
     width: 100%;
     min-height: 10rem;
@@ -60,7 +96,6 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 5px 0 10px rgba(0, 0, 0, .8);
 }
 
 .contenedor__logo {
@@ -108,18 +143,32 @@ li {
     }
 
     .contenedor__logo img {
-        height: 7rem;
-        padding-bottom: 1rem;
+        min-height: 15rem;
+        padding: 2rem 0;
         border-bottom: 1px solid var(--primero);
     }
     li {
-        display: block;
+        display: inline;
+        padding: 1rem;
         text-align: center;
+    }
+}
+@media screen and (max-width: 850px) {
+    
+    
+    li {
+        display: block;
     }
 }
 
 
+
+
 /* Main */
+
+
+
+
 .contenido {
     display: flex;
     justify-content: space-between;
@@ -134,9 +183,23 @@ li {
 .titulo {
     width: 100%;
     color: var(--primero);
-    padding-bottom: 5rem;
-    text-align: center;
+    padding-bottom: 2rem;
+    animation-name: slidein;
+    animation-duration: 3s;
 }
+
+@keyframes slidein {
+    from {
+      margin-right: 100%;
+      width: 250%;
+    }
+  
+    to {
+      margin-right: 0%;
+      width: 100%;
+    }
+  } 
+
 .titulo__parrafo {
     flex-direction: column;
     text-align: center;
@@ -151,46 +214,240 @@ li {
     color: var(--primero);
 }
 
+@media screen and (max-width: 500px) {
+    .titulo__parrafo p {
+        margin: 0;
+    }
+    
+}
+
+
+
+
+
+
 /* ¿como se hace? */
 
+
+
+
+
 .tecnicas {
-    padding-top: 2rem;
-    min-height: 120rem;
+    width: 100%;
+    min-height: 200rem;
+}
+.tecnicas__titulo {
+    margin: 0 5rem;
+    padding: 2rem;
+    background-color: #fcca41;
 }
 
-.derecha {
-    text-align: end;
+.pasos {
+    min-height: 100rem;
+    margin: 0 2rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
 }
+.pasos__texto {
+    padding: 3rem;
+    height: 50rem;
+    text-align: center;
+    background-color: var(--tercero);
+    border-radius: 1rem;
+}
+
+.pasos__imagen img {
+    width: 100%;
+    height: 50rem;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 850px) {
+    .pasos {
+        display: block;
+        width: 100%;
+        margin: 0;
+    }
+
+    
+}
+
+.tipos {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    background-color: var(--cuarto);
+}
+
+.tipos p {
+    padding: 0 3rem;
+}
+
+.tecnicas__tipos {
+    margin: 0 2rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+}
+
+.tecnicas__texto {
+    background-color: var(--cuarto);
+    padding: 1rem;
+    min-height: 25rem;
+    border-radius: 1rem;
+}
+.tecnicas__imagen img {
+    width: 100%;
+    min-height: 100%;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+    .tecnicas__tipos {
+        display: block;
+    } 
+}
+
+
+
 
 /* DISEÑOS */
+
+
+
+
+
 .galeria {
     text-transform: uppercase;
-    color: var(--segundo);
+    color: var(--primero);
 }
 
 .categorias {
     text-align: center;
+    background-image: linear-gradient(to bottom,#3b434b,white);
 }
 
-.galeria__animales {
+.galeria__animales,
+.galeria__estatuas {
+    width: 100%;
     display: grid; 
-    grid-template-columns: repeat(auto-fill, minmax (24rem, 1fr));
-    gap: .5rem; 
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 4rem;
+    
+}
+.border {
+    border-bottom: 0.1rem solid var(--primero);
+    margin: 0 30%;
+}
+
+.animales {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, .39);
+    border-radius: .9rem;
+    background-color: var(--segundoClaro);
+}
+
+.animales p {
+    color: var(--segundo);
+    font-weight: 700;
+}
+
+.animales__imagen img {
+    width: 100%;
+    height: 40rem;
+    object-fit: cover;
+}
+
+.animales:hover {
+    background-color: #f7c331;
+    transform: scale(105%);
+}
+
+@media screen and (max-width: 768px) {
+    .galeria__animales,
+    .galeria__estatuas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .galeria__animales,
+    .galeria__estatuas,
+    .separacion {
+        display: block;
+        min-height: 20rem;
+    }
 }
 
 
-.galeria__animales img {
-    width: 30rem;
-    height: 30rem;
+
+
+/* Donde Conseguirlos */
+
+
+
+
+.main {
+    width: 100%;
+}
+
+.paginas__contenido {
+    background-color: var(--blanco);
+    border-radius: 1rem;
+    padding-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.paginas__contenido:hover {
+    box-shadow: 0 0 14px 28px rgba(170, 170, 170, 0.19);
     border-radius: 2rem;
+    background-color: var(--segundoClaro);
 }
+
+.paginas__contenido img {
+    border-radius: 3rem;
+}
+
+.titulo__paginas a {
+    text-transform: uppercase;
+}
+
+.paginas {
+    display: block;
+    margin: 0 7rem;
+}
+
+@media screen and (max-width: 768px) {
+    .paginas {
+        display: block;
+    }
+}
+
+
+
+
+
+
 
 /* Contacto */
 
+
+
+
+
 h2, label {
-    text-align: center;
     color: var(--primero);
     text-transform: uppercase;
+}
+.contacto {
+    height: 100rem;
 }
 
 .formulario {
@@ -210,9 +467,6 @@ h2, label {
     font-size: 1.5rem;
 }
 
-.campos {
-
-}
 
 .relleno {
     margin-bottom: 1rem;
@@ -237,6 +491,7 @@ footer {
     height: 6rem;
     font-size: 1rem;
     margin-bottom: 0;
+    margin-top: auto;
     background-color: var(--segundo);
     color: var(--primero);
     text-align: center;
